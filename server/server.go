@@ -16,7 +16,7 @@ const (
   PWD = "PWD"
   GET = "GET"
   UPL = "UPL"
-  CACHE = 4096
+  CACHE = 512
 )
 
 
@@ -135,18 +135,24 @@ func upl(conn net.Conn, fileName string, fileSize int64){
 func dirList(conn net.Conn) {
   defer conn.Write([]byte("\r\n"))
 
-  dir, err := os.Open(".")
+  var fileList string
+  dir, err := os.Open("./")
   if err != nil {
     return
   }
+  files, err := dir.Readdir(-1)
+  if err != nil {
+    return
+  }
+  for _, nm := range files {
+    if nm.IsDir(){
+      fileList += nm.Name() + "/#"
+    } else {
+      fileList += nm.Name() + "#"
+    }
+  }
+  conn.Write([]byte(fileList))
 
-  names, err := dir.Readdirnames(-1)
-  if err != nil {
-    return
-  }
-  for _, nm := range names {
-    conn.Write([]byte(nm + "\r\n"))
-  }
 }
 
 func checkError(err error) {
