@@ -82,4 +82,21 @@ const (
 - quit - close application
 
 
+## 4. Sources
 
+###### Books
+- Network Programming with Go
+	 - https://www.amazon.com/Network-Programming-Go-Adam-Woodbeck/dp/1718500882
+	 - Basic Server and Client from code pag 144.
+- Learning Go
+	- Free @ https://www.miek.nl/go/
+
+###### Links
+- Creating a simple TCP server in Go
+	- https://coderwall.com/p/wohavg/creating-a-simple-tcp-server-in-go
+- Build a concurrent TCP server in Go
+	- https://opensource.com/article/18/5/building-concurrent-tcp-server-go
+- How to Write a Concurrent FTP Server in GO
+	- https://betterprogramming.pub/how-to-write-a-concurrent-ftp-server-in-go-part-1-3904f2e3a9e5
+- How To Write Unit Tests in Go
+	- https://www.digitalocean.com/community/tutorials/how-to-write-unit-tests-in-go-using-go-test-and-the-testing-package
