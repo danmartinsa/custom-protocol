@@ -78,7 +78,7 @@ const (
 - pwd - Echo current server folder structure
 - get - request file download from server
 - send - reques file upload to server
-- man - list of the commands accepted
+- man - list of the accepted commands
 - quit - close application
 
 
