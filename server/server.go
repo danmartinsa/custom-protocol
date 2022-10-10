@@ -16,7 +16,7 @@ const (
   PWD = "PWD"
   GET = "GET"
   UPL = "UPL"
-  CACHE = 512
+  CACHE = 4096
 )
 
 
@@ -133,7 +133,7 @@ func upl(conn net.Conn, fileName string, fileSize int64){
 }
 
 func dirList(conn net.Conn) {
-  defer conn.Write([]byte("\r\n"))
+  // defer conn.Write([]byte("\r\n"))
 
   var fileList string
   dir, err := os.Open("./")

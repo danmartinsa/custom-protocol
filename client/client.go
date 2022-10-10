@@ -28,7 +28,7 @@ const (
   UPL = "UPL"
 )
 
-const CACHE = 512
+const CACHE = 4096
 
 func main() {
   if len(os.Args) != 2 {
